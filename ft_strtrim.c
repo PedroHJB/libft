@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/17 17:49:27 by pede-jes          #+#    #+#             */
-/*   Updated: 2024/11/04 06:47:56 by pede-jes         ###   ########.fr       */
+/*   Created: 2024/11/04 06:07:03 by pede-jes          #+#    #+#             */
+/*   Updated: 2024/11/04 06:24:27 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t cont;
+	size_t endpoint;
 
-	cont = 0;
+	if (!s1 || !set)
+		return (NULL);
 
-	while (cont < n)
-	{
-		((unsigned char *)dest)[cont] = ((const unsigned char *)src)[cont];
-		cont++;
-	}
+	while (*s1 && ft_strchr(set, *s1))
+		s1++;
 
-	return ((unsigned char *)dest);
+	endpoint = ft_strlen(s1);
+
+	while (endpoint && ft_strchr(set, s1[endpoint]))
+		endpoint--;
+
+	return (ft_substr(s1, 0, endpoint + 1));
 }

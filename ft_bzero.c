@@ -6,7 +6,7 @@
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 17:37:13 by pede-jes          #+#    #+#             */
-/*   Updated: 2024/10/17 17:39:06 by pede-jes         ###   ########.fr       */
+/*   Updated: 2024/11/04 04:28:52 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	memset(s,0,n);
+	ft_memset(s,0,n);
 }

@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/17 17:49:27 by pede-jes          #+#    #+#             */
-/*   Updated: 2024/11/04 06:47:56 by pede-jes         ###   ########.fr       */
+/*   Created: 2024/11/04 05:14:34 by pede-jes          #+#    #+#             */
+/*   Updated: 2024/11/04 05:40:27 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void *malloc (size_t);
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t cont;
+	char *newstring;
+	size_t lens1;
+	size_t lens2;
 
-	cont = 0;
+	lens1 = ft_strlen(s1);
+	lens2 = ft_strlen(s2);
 
-	while (cont < n)
-	{
-		((unsigned char *)dest)[cont] = ((const unsigned char *)src)[cont];
-		cont++;
-	}
+	newstring = malloc(lens1 + lens2 + 1);
+	if (!newstring)
+		return (NULL);
 
-	return ((unsigned char *)dest);
+	ft_strlcpy(newstring, s1, lens1 + 1);
+	ft_strlcpy(&newstring[lens1], s2, lens2 + 1);
+
+	return (newstring);
 }

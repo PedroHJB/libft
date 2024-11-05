@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/17 17:49:27 by pede-jes          #+#    #+#             */
-/*   Updated: 2024/11/04 06:47:56 by pede-jes         ###   ########.fr       */
+/*   Created: 2024/11/04 08:15:36 by pede-jes          #+#    #+#             */
+/*   Updated: 2024/11/04 08:24:05 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	**ft_split(char const *s, char c)
 {
-	size_t cont;
+	unsigned char *conts;
+	unsigned char *i;
+	unsigned char *newstring;
 
-	cont = 0;
+	conts = 0;
+	i = 0;
 
-	while (cont < n)
+	while (s[i] != '\0')
 	{
-		((unsigned char *)dest)[cont] = ((const unsigned char *)src)[cont];
-		cont++;
+		if (conts == c)
+			conts++;
+
+		i++;
 	}
 
-	return ((unsigned char *)dest);
+	newstring = malloc(conts +1);
+
+	
 }

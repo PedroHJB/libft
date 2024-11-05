@@ -1,9 +1,0 @@
-• memset
-• bzero
-• memcpy
-• memmove
-• strlcat
-• memchr
-• memcmp
-• strnstr
-• atoi

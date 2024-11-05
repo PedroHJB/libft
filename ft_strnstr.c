@@ -6,60 +6,43 @@
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 14:50:36 by pede-jes          #+#    #+#             */
-/*   Updated: 2024/10/30 17:23:25 by pede-jes         ###   ########.fr       */
+/*   Updated: 2024/11/04 06:01:58 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// int	main(void)
-// {
-// }
-
-int	chekstring(char *big, char *little, size_t len);
+size_t	ft_strlen(const char *str);
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int	i;
+	size_t	i;
+	size_t	j;
+	size_t	len_little;
 
-	i = 0;
-	if (*big == '\0')
-		return (0);
 	if (*little == '\0')
-		return (0);
-	while (*big++ && len--)
+		return ((char *)big);
+	len_little = ft_strlen(little);
+	i = 0;
+	while (big[i] != '\0' && i + len_little <= len)
 	{
-		if (*little == '\0')
-			return (0);
-		if (*big == *little)
+		j = 0;
+		while (big[i + j] == little[j] && little[j] != '\0')
 		{
-			if(chekstring((char*)big, (char*)little, len))
-			{
-				return (char*)big;	
-			}
+			j++;
 		}
-		little++;
+		if (j == len_little)
+			return ((char *)&big[i]);
+		i++;
 	}
-	return ((char *)big);
+	return (NULL);
 }
-
-int	chekstring(char *big, char *little, size_t len)
+size_t	ft_strlen(const char *str)
 {
-	size_t lencoppy;
-	char *bufferbig;
-	char *bufferlittle;
+	size_t length = 0;
 
-	bufferbig = big;
-	bufferlittle= little;
-	lencoppy = len;
+	while (str[length] != '\0')
+		length++;
 
-	while (bufferbig++ && bufferlittle++ && lencoppy--)
-	{
-		if (*bufferbig != *bufferlittle)
-			return (0);
-	}
-	if (*bufferlittle == '\0')
-		return (1);
-
-	return 0;
+	return (length);
 }

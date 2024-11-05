@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/17 17:49:27 by pede-jes          #+#    #+#             */
-/*   Updated: 2024/11/04 06:47:56 by pede-jes         ###   ########.fr       */
+/*   Created: 2024/11/01 15:12:35 by pede-jes          #+#    #+#             */
+/*   Updated: 2024/11/01 15:56:33 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void *malloc (size_t);
+void	*ft_calloc(size_t nelem,size_t elsize)
 {
-	size_t cont;
+	unsigned char *ptr;
 
-	cont = 0;
-
-	while (cont < n)
+	if(nelem ==0||elsize ==0)
 	{
-		((unsigned char *)dest)[cont] = ((const unsigned char *)src)[cont];
-		cont++;
+		nelem = 1;
+		elsize = 1;
 	}
+	
+	ptr = malloc(nelem*elsize);
+	
+	ft_bzero(ptr,nelem *elsize);
 
-	return ((unsigned char *)dest);
+
+	if(ptr == NULL)
+		return NULL;
+
+	return ptr;
+	
 }

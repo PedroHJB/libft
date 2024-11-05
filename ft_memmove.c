@@ -6,28 +6,11 @@
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 11:26:52 by pede-jes          #+#    #+#             */
-/*   Updated: 2024/10/23 19:29:12 by pede-jes         ###   ########.fr       */
+/*   Updated: 2024/10/31 12:36:15 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdio.h>
-#include <string.h>
-
-
-void	*ft_memmove(void *dest, const void *src, size_t n);
-
-// int	main(void)
-// {
-// 	char	a[] = "testeee";
-// 	char	d[] = "testeee";
-// 	char	b[] = "bbbbbbbbb";
-// 	size_t	c;
-
-// 	c = 5;
-// 	printf("%s\n", (char *)memmove(b, a , c));
-// 	 printf("%s\n", (char*)ft_memmove(b, d , c));
-// }
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {

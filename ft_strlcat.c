@@ -6,22 +6,13 @@
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 11:46:29 by pede-jes          #+#    #+#             */
-/*   Updated: 2024/10/30 16:42:46 by pede-jes         ###   ########.fr       */
+/*   Updated: 2024/10/31 12:38:43 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 
-// 	int main(void)
-// {
-// 	char	a[50] = "abracadabra";
-// 	char	b[] = "Roberson";
-
-// 	printf("Return: %zu\n", ft_strlcat(a, b, 50));
-// 	printf("Return: %s\n", b);
-// 	printf("Return: %s\n", a);
-// }
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
     size_t	sizedest;

@@ -6,26 +6,11 @@
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 18:49:41 by pede-jes          #+#    #+#             */
-/*   Updated: 2024/10/23 19:29:01 by pede-jes         ###   ########.fr       */
+/*   Updated: 2024/10/31 12:34:29 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdio.h>
-#include <string.h>
-
-void	*ft_memchr(const void *s, int c, size_t n);
-
-// int	main(void)
-// {
-// 	int		b;
-// 	size_t	c;
-// 	char	a[] = "sddddkkkklkklmklnklnklAsmklmlklm";
-
-// 	b = 65;
-// 	c = 50;
-// 	printf("%s", (unsigned char *)ft_memchr(a, b, c));
-// }
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

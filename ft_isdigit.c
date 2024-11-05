@@ -6,15 +6,15 @@
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 15:50:10 by pede-jes          #+#    #+#             */
-/*   Updated: 2024/10/17 15:50:22 by pede-jes         ###   ########.fr       */
+/*   Updated: 2024/10/31 12:20:49 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     ft_isalpha(int c)
+int     ft_isdigit(int c)
 {
-        if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+        if (c >= '0' && c <= '9')
         {
                 return (1024);
         }
