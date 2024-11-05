@@ -6,7 +6,7 @@
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 12:55:29 by pede-jes          #+#    #+#             */
-/*   Updated: 2024/11/05 12:39:16 by pede-jes         ###   ########.fr       */
+/*   Updated: 2024/11/05 15:04:44 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_atoi(const char *nptr)
 			sign = -1;
 		i++;
 	}
-	while (nptr[i] != '\0' && isdigit(nptr[i]))
+	while (nptr[i] != '\0' && ft_isdigit(nptr[i]))
 	{
 		number = number * 10 + (nptr[i] - '0');
 		i++;
