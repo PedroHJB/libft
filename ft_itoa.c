@@ -6,7 +6,7 @@
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 08:30:51 by pede-jes          #+#    #+#             */
-/*   Updated: 2024/11/05 15:03:49 by pede-jes         ###   ########.fr       */
+/*   Updated: 2024/11/05 15:39:04 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,64 +14,69 @@
 
 void		*malloc(size_t);
 
-static char	*ft_conversion(char *numberc, int lennumber, unsigned int n)
+#include "libft.h"
+
+void					*malloc(size_t);
+
+static unsigned char	*ft_conversion(unsigned char *numberc, int lennumber,
+		int n)
 {
+	size_t	is_negative;
+	long	newN;
+
+	is_negative = 0;
+	newN = n;
+	if (newN < 0)
+	{
+		is_negative = 1;
+		newN = -newN;
+	}
 	while (lennumber--)
 	{
-		numberc[lennumber] = (n % 10) + '0';
-		n /= 10;
+		numberc[lennumber] = (newN % 10) + '0';
+		newN /= 10;
 	}
+	if (is_negative)
+		numberc[0] = '-';
 	return (numberc);
 }
 
-static int	ft_chekn(int n)
+static int	ft_chekn(int newN)
 {
-	int	len;
+	size_t	len;
 
 	len = 0;
-	if (n <= 0)
-		len = 1;
-	while (n != 0)
+	if (newN == 0)
+		return (1);
+	while (newN != 0)
 	{
-		n /= 10;
+		newN /= 10;
 		len++;
 	}
 	return (len);
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa(int newN)
 {
-	int				lennumber;
-	char			*numberc;
-	unsigned int	nb;
-	char			*converted;
+	size_t lennumber;
+	unsigned char *numberc;
 
-	if (n == INT_MIN)
-		return (ft_strdup("-2147483648"));
-	lennumber = ft_chekn(n);
-	if (n < 0)
-	{
-		nb = -n;
-		numberc = malloc(lennumber + 1);
-		if (!numberc)
-			return (NULL);
-		numberc[0] = '-';
-	}
-	else
-	{
-		nb = n;
-		numberc = malloc(lennumber + 1);
-		if (!numberc)
-			return (NULL);
-	}
+	lennumber = ft_chekn(newN);
+	if (newN < 0)
+		lennumber += 1;
+
+	numberc = malloc(lennumber + 1);
+	if (!numberc)
+		return (NULL);
+
 	numberc[lennumber] = '\0';
-	if (n < 0)
+
+	if (newN == 0)
 	{
-		numberc++;
-		lennumber--;
+		numberc[0] = '0';
+		return ((char *)numberc);
 	}
-	converted = ft_conversion(numberc, lennumber, nb);
-	if (n < 0)
-		return (converted - 1);
-	return (converted);
+
+	numberc = ft_conversion(numberc, lennumber, newN);
+	return ((char *)numberc);
 }
