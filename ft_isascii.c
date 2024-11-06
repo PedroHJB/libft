@@ -6,20 +6,18 @@
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 15:53:44 by pede-jes          #+#    #+#             */
-/*   Updated: 2024/10/17 15:54:15 by pede-jes         ###   ########.fr       */
+/*   Updated: 2024/11/06 14:59:36 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int     ft_isascii(int c)
+int	ft_isascii(int c)
 {
-        if (c >= 0 && c <= 127)
-        {
-                return (1);
-        }
-        else
-        {
-                return (0);
-        }
+	if (c >= 0 && c <= 127)
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
 }

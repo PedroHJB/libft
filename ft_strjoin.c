@@ -6,13 +6,13 @@
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 05:14:34 by pede-jes          #+#    #+#             */
-/*   Updated: 2024/11/04 05:40:27 by pede-jes         ###   ########.fr       */
+/*   Updated: 2024/11/06 15:00:08 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *malloc (size_t);
+void	*malloc(size_t);
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char *newstring;

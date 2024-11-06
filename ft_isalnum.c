@@ -6,13 +6,13 @@
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 15:50:45 by pede-jes          #+#    #+#             */
-/*   Updated: 2024/11/01 15:56:58 by pede-jes         ###   ########.fr       */
+/*   Updated: 2024/11/06 14:59:31 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *malloc (size_t);
+void	*malloc(size_t);
 int	ft_isalnum(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))

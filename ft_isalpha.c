@@ -6,20 +6,18 @@
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 15:03:15 by pede-jes          #+#    #+#             */
-/*   Updated: 2024/10/17 15:07:56 by pede-jes         ###   ########.fr       */
+/*   Updated: 2024/11/06 14:59:34 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int     ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
-        if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-        {
-                return (1024);
-        }
-        else
-        {
-                return (0);
-        }
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+	{
+		return (1024);
+	}
+	else
+	{
+		return (0);
+	}
 }

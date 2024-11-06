@@ -6,13 +6,11 @@
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 12:55:29 by pede-jes          #+#    #+#             */
-/*   Updated: 2024/11/05 15:04:44 by pede-jes         ###   ########.fr       */
+/*   Updated: 2024/11/06 11:45:56 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int	ft_isdigit(int c);
 
 int	ft_atoi(const char *nptr)
 {

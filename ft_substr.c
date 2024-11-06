@@ -6,19 +6,18 @@
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 03:57:07 by pede-jes          #+#    #+#             */
-/*   Updated: 2024/11/04 05:10:32 by pede-jes         ###   ########.fr       */
+/*   Updated: 2024/11/06 15:00:35 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-void *malloc (size_t);
+void	*malloc(size_t);
 char	*ft_substr(char const *s, unsigned int start, size_t len)
-{	
-	char	*newsubstring;
-	size_t	cont;
-	size_t	s_len;
+{
+	char *newsubstring;
+	size_t cont;
+	size_t s_len;
 
 	if (!s)
 		return (NULL);
@@ -27,13 +26,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (start >= s_len)
 	{
-		newsubstring = malloc(1); // Aloca espaço para uma string vazia
+		newsubstring = malloc(1);
 		if (newsubstring)
 			newsubstring[0] = '\0';
 		return (newsubstring);
 	}
 
-	// Ajusta len para o comprimento disponível a partir de start
 	if (len > s_len - start)
 		len = s_len - start;
 

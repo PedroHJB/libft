@@ -6,20 +6,18 @@
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 15:50:10 by pede-jes          #+#    #+#             */
-/*   Updated: 2024/10/31 12:20:49 by pede-jes         ###   ########.fr       */
+/*   Updated: 2024/11/06 14:59:38 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int     ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-        if (c >= '0' && c <= '9')
-        {
-                return (1024);
-        }
-        else
-        {
-                return (0);
-        }
+	if (c >= '0' && c <= '9')
+	{
+		return (1024);
+	}
+	else
+	{
+		return (0);
+	}
 }

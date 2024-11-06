@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/01 15:12:35 by pede-jes          #+#    #+#             */
-/*   Updated: 2024/11/06 11:37:36 by pede-jes         ###   ########.fr       */
+/*   Created: 2024/11/06 15:49:25 by pede-jes          #+#    #+#             */
+/*   Updated: 2024/11/06 15:54:12 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*malloc(size_t);
-void	*ft_calloc(size_t nelem, size_t elsize)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	unsigned char *ptr;
+	size_t index;
 
-	if (nelem == 0 || elsize == 0)
+	index = 0;
+	if (!s)
+		return ;
+
+	while (s[index])
 	{
-		return (NULL);
+		f(index, &s[index]);
+		index++;
 	}
-
-	ptr = malloc(nelem * elsize);
-
-	if (ptr == NULL)
-		return (NULL);
-
-	ft_bzero(ptr, nelem * elsize);
-
-	return (ptr);
 }

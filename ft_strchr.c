@@ -6,12 +6,11 @@
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 15:05:29 by pede-jes          #+#    #+#             */
-/*   Updated: 2024/10/31 12:15:43 by pede-jes         ###   ########.fr       */
+/*   Updated: 2024/11/06 12:51:55 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 char	*ft_strchr(const char *str, int c)
 {

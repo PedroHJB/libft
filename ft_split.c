@@ -6,7 +6,7 @@
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 08:15:36 by pede-jes          #+#    #+#             */
-/*   Updated: 2024/11/04 08:24:05 by pede-jes         ###   ########.fr       */
+/*   Updated: 2024/11/06 15:00:02 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,5 @@ char	**ft_split(char const *s, char c)
 		i++;
 	}
 
-	newstring = malloc(conts +1);
-
-	
+	newstring = malloc(conts + 1);
 }

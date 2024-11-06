@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/01 15:12:35 by pede-jes          #+#    #+#             */
-/*   Updated: 2024/11/06 11:37:36 by pede-jes         ###   ########.fr       */
+/*   Created: 2024/11/06 14:44:37 by pede-jes          #+#    #+#             */
+/*   Updated: 2024/11/06 14:58:28 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*malloc(size_t);
-void	*ft_calloc(size_t nelem, size_t elsize)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	unsigned char *ptr;
+	char *new_str;
+	size_t s_len;
+	size_t index;
 
-	if (nelem == 0 || elsize == 0)
+	index = 0;
+	s_len = ft_strlen(s);
+	if (!s)
+		return (NULL);
+	new_str = ft_calloc(s_len + 1, sizeof(char));
+	if (!new_str)
+		return (NULL);
+	while (index < s_len)
 	{
-		return (NULL);
+		new_str[index] = f(index, s[index]);
+		index++;
 	}
-
-	ptr = malloc(nelem * elsize);
-
-	if (ptr == NULL)
-		return (NULL);
-
-	ft_bzero(ptr, nelem * elsize);
-
-	return (ptr);
+	new_str[s_len] = '\0';
+	return (new_str);
 }
