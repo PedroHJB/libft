@@ -6,7 +6,7 @@
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 08:30:51 by pede-jes          #+#    #+#             */
-/*   Updated: 2024/11/06 17:40:32 by pede-jes         ###   ########.fr       */
+/*   Updated: 2024/11/07 16:45:35 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,61 +16,57 @@ static unsigned char	*ft_conversion(unsigned char *numberc, int lennumber,
 		int n)
 {
 	size_t	is_negative;
-	long	newN;
+	long	new_n;
 
 	is_negative = 0;
-	newN = n;
-	if (newN < 0)
+	new_n = n;
+	if (new_n < 0)
 	{
 		is_negative = 1;
-		newN = -newN;
+		new_n = -new_n;
 	}
 	while (lennumber--)
 	{
-		numberc[lennumber] = (newN % 10) + '0';
-		newN /= 10;
+		numberc[lennumber] = (new_n % 10) + '0';
+		new_n /= 10;
 	}
 	if (is_negative)
 		numberc[0] = '-';
 	return (numberc);
 }
 
-static int	ft_chekn(int newN)
+static int	ft_chekn(int new_n)
 {
 	size_t	len;
 
 	len = 0;
-	if (newN == 0)
+	if (new_n == 0)
 		return (1);
-	while (newN != 0)
+	while (new_n != 0)
 	{
-		newN /= 10;
+		new_n /= 10;
 		len++;
 	}
 	return (len);
 }
 
-char	*ft_itoa(int newN)
+char	*ft_itoa(int new_n)
 {
-	size_t lennumber;
-	unsigned char *numberc;
+	size_t			lennumber;
+	unsigned char	*numberc;
 
-	lennumber = ft_chekn(newN);
-	if (newN < 0)
+	lennumber = ft_chekn(new_n);
+	if (new_n < 0)
 		lennumber += 1;
-
 	numberc = malloc(lennumber + 1);
 	if (!numberc)
 		return (NULL);
-
 	numberc[lennumber] = '\0';
-
-	if (newN == 0)
+	if (new_n == 0)
 	{
 		numberc[0] = '0';
 		return ((char *)numberc);
 	}
-
-	numberc = ft_conversion(numberc, lennumber, newN);
+	numberc = ft_conversion(numberc, lennumber, new_n);
 	return ((char *)numberc);
 }

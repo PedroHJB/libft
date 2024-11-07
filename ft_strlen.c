@@ -6,7 +6,7 @@
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 16:59:39 by pede-jes          #+#    #+#             */
-/*   Updated: 2024/11/06 15:00:15 by pede-jes         ###   ########.fr       */
+/*   Updated: 2024/11/07 16:53:32 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 size_t	ft_strlen(const char *str)
 {
-	size_t length = 0;
+	size_t	length;
 
+	length = 0;
 	while (str[length] != '\0')
 		length++;
-
 	return (length);
 }

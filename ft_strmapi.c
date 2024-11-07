@@ -6,7 +6,7 @@
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 14:44:37 by pede-jes          #+#    #+#             */
-/*   Updated: 2024/11/06 14:58:28 by pede-jes         ###   ########.fr       */
+/*   Updated: 2024/11/07 17:29:27 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char *new_str;
-	size_t s_len;
-	size_t index;
+	char	*new_str;
+	size_t	s_len;
+	size_t	index;
 
 	index = 0;
 	s_len = ft_strlen(s);

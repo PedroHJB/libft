@@ -6,7 +6,7 @@
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 14:50:36 by pede-jes          #+#    #+#             */
-/*   Updated: 2024/11/04 06:01:58 by pede-jes         ###   ########.fr       */
+/*   Updated: 2024/11/07 16:39:00 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,13 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
+
 size_t	ft_strlen(const char *str)
 {
-	size_t length = 0;
+	size_t	length;
 
+	length = 0;
 	while (str[length] != '\0')
 		length++;
-
 	return (length);
 }
