@@ -6,7 +6,7 @@
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 17:49:27 by pede-jes          #+#    #+#             */
-/*   Updated: 2024/11/06 11:47:58 by pede-jes         ###   ########.fr       */
+/*   Updated: 2024/11/07 12:07:04 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t cont;
+	size_t count;
 
-	cont = 0;
+	count = 0;
 
-	while (cont < n)
+	while (count < n)
 	{
-		((unsigned char *)dest)[cont] = ((const unsigned char *)src)[cont];
-		cont++;
+		((unsigned char *)dest)[count] = ((const unsigned char *)src)[count];
+		count++;
 	}
 
 	return ((unsigned char *)dest);

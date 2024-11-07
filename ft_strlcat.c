@@ -6,7 +6,7 @@
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 11:46:29 by pede-jes          #+#    #+#             */
-/*   Updated: 2024/11/06 15:00:11 by pede-jes         ###   ########.fr       */
+/*   Updated: 2024/11/07 12:08:36 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,19 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	size_t	sizedest;
 	size_t	sizesrc;
-	size_t	cont;
+	size_t	count;
 
 	sizedest = ft_strlen(dest);
 	sizesrc = ft_strlen(src);
 	if (size <= sizedest)
 		return (size + sizesrc);
-	cont = 0;
-	while (src[cont] != '\0' && (sizedest + cont) < (size - 1))
+	count = 0;
+	while (src[count] != '\0' && (sizedest + count) < (size - 1))
 	{
-		dest[sizedest + cont] = src[cont];
-		cont++;
+		dest[sizedest + count] = src[count];
+		count++;
 	}
-	dest[sizedest + cont] = '\0';
+	dest[sizedest + count] = '\0';
 	return (sizedest + sizesrc);
 }
 
