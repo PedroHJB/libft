@@ -6,31 +6,11 @@
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 08:15:36 by pede-jes          #+#    #+#             */
-/*   Updated: 2024/11/07 17:00:36 by pede-jes         ###   ########.fr       */
+/*   Updated: 2024/11/08 13:43:52 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static char		**ft_alloc(char **array, const char *s, int c);
-static size_t	ft_word_counter(const char *s, int c);
-
-char	**ft_split(const char *s, int c)
-{
-	char	**array;
-	size_t	words;
-
-	if (!s)
-		return (NULL);
-	words = ft_word_counter(s, c);
-	array = (char **)ft_calloc((words +1), sizeof(char *));
-	if (!array)
-		return (NULL);
-	while (*s == (unsigned char)c && *s)
-		s++;
-	ft_alloc(array, s, c);
-	return (array);
-}
 
 static size_t	ft_word_counter(const char *s, int c)
 {
@@ -73,5 +53,22 @@ static char	**ft_alloc(char **array, const char *s, int c)
 			s++;
 	}
 	array[index] = NULL;
+	return (array);
+}
+
+char	**ft_split(const char *s, int c)
+{
+	char	**array;
+	size_t	words;
+
+	if (!s)
+		return (NULL);
+	words = ft_word_counter(s, c);
+	array = (char **)ft_calloc((words +1), sizeof(char *));
+	if (!array)
+		return (NULL);
+	while (*s == (unsigned char)c && *s)
+		s++;
+	ft_alloc(array, s, c);
 	return (array);
 }

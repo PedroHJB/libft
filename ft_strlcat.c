@@ -6,7 +6,7 @@
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 11:46:29 by pede-jes          #+#    #+#             */
-/*   Updated: 2024/11/07 12:08:36 by pede-jes         ###   ########.fr       */
+/*   Updated: 2024/11/08 11:50:31 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,4 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	}
 	dest[sizedest + count] = '\0';
 	return (sizedest + sizesrc);
-}
-
-size_t	ft_strlen(const char *str)
-{
-	size_t	length;
-
-	length = 0;
-	while (str[length] != '\0')
-		length++;
-	return (length);
 }
