@@ -6,7 +6,7 @@
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 03:57:07 by pede-jes          #+#    #+#             */
-/*   Updated: 2024/11/07 18:40:56 by pede-jes         ###   ########.fr       */
+/*   Updated: 2024/11/08 14:45:56 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
-	s_len = strlen(s);
+	s_len = ft_strlen(s);
 	if (start >= s_len)
 		return (allocate_and_copy("", 0, 0));
 	if (len > s_len - start)
