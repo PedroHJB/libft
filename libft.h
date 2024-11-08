@@ -6,18 +6,14 @@
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 14:38:47 by pede-jes          #+#    #+#             */
-/*   Updated: 2024/11/07 18:15:11 by pede-jes         ###   ########.fr       */
+/*   Updated: 2024/11/08 15:50:51 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <ctype.h> // redundante
-# include <limits.h> // redundante
-# include <stddef.h> // redundante
 # include <stdlib.h>
-# include <string.h> //redundante
 # include <unistd.h>
 # include <stdint.h> 
 
