@@ -6,7 +6,7 @@
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 11:26:52 by pede-jes          #+#    #+#             */
-/*   Updated: 2024/11/08 13:42:33 by pede-jes         ###   ########.fr       */
+/*   Updated: 2024/11/12 14:16:21 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	d = (unsigned char *)dest;
 	s = (const unsigned char *)src;
+	if ((unsigned char *)dest == (unsigned char *)src)
+		return (dest);
 	if (d < s)
 	{
 		while (n--)
@@ -33,9 +35,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		lasts = s + (n - 1);
 		lastd = d + (n - 1);
 		while (n--)
-		{
 			*lastd-- = *lasts--;
-		}
 	}
 	return (dest);
 }
