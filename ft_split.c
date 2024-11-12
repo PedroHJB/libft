@@ -6,7 +6,7 @@
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 08:15:36 by pede-jes          #+#    #+#             */
-/*   Updated: 2024/11/12 15:20:47 by pede-jes         ###   ########.fr       */
+/*   Updated: 2024/11/12 18:53:52 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,49 +22,44 @@ static size_t	ft_word_counter(const char *s, int c)
 		if (*s != c)
 		{
 			words++;
-			while (*s != c && *s)
+			while (*s && *s != c)
 				s++;
 		}
-		if (*s == '\0')
-			return (words);
-		s++;
+		else
+			s++;
 	}
 	return (words);
 }
 
 static void	*free_all(size_t index, char **array)
 {
-	while (array[index - 1])
+	while (index > 0)
 	{
-		index--;
-		free(array[index]);
+		free(array[--index]);
 	}
+	free(array);
 	return (NULL);
 }
 
-static char	**ft_alloc(char **array, const char *s, int c)
+static char	**ft_alloc(char **array, const char *s, int c, size_t words)
 {
-	size_t	current_word_counter;
+	size_t	word_length;
 	size_t	index;
-	size_t	free_counter;
 
-	free_counter = 0;
 	index = 0;
-	while (*s)
+	while (*s && index < words)
 	{
-		current_word_counter = 0;
-		while (s[current_word_counter] != c && s[current_word_counter])
-			current_word_counter++;
-		array[index] = (char *)ft_calloc((current_word_counter + 1),
-				sizeof(char));
+		while (*s == c)
+			s++;
+		word_length = 0;
+		while (s[word_length] && s[word_length] != c)
+			word_length++;
+		array[index] = (char *)ft_calloc(word_length + 1, sizeof(char));
 		if (!array[index])
 			return (free_all(index, array));
-		ft_strlcpy(array[index], s, current_word_counter + 1);
+		ft_strlcpy(array[index], s, word_length + 1);
 		index++;
-		while (*s != c && *s)
-			s++;
-		while (*s == c && *s)
-			s++;
+		s += word_length;
 	}
 	array[index] = NULL;
 	return (array);
@@ -78,11 +73,8 @@ char	**ft_split(const char *s, int c)
 	if (!s)
 		return (NULL);
 	words = ft_word_counter(s, c);
-	array = (char **)ft_calloc((words + 1), sizeof(char *));
+	array = (char **)ft_calloc(words + 1, sizeof(char *));
 	if (!array)
 		return (NULL);
-	while (*s == (unsigned char)c && *s)
-		s++;
-	ft_alloc(array, s, c);
-	return (array);
+	return (ft_alloc(array, s, c, words));
 }
