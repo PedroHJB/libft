@@ -6,13 +6,13 @@
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 08:30:51 by pede-jes          #+#    #+#             */
-/*   Updated: 2024/11/07 16:45:35 by pede-jes         ###   ########.fr       */
+/*   Updated: 2024/11/13 19:27:37 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static unsigned char	*ft_conversion(unsigned char *numberc, int lennumber,
+static unsigned char	*ft_conversion(unsigned char *numberc, int len_number,
 		int n)
 {
 	size_t	is_negative;
@@ -25,9 +25,9 @@ static unsigned char	*ft_conversion(unsigned char *numberc, int lennumber,
 		is_negative = 1;
 		new_n = -new_n;
 	}
-	while (lennumber--)
+	while (len_number--)
 	{
-		numberc[lennumber] = (new_n % 10) + '0';
+		numberc[len_number] = (new_n % 10) + '0';
 		new_n /= 10;
 	}
 	if (is_negative)
@@ -52,21 +52,21 @@ static int	ft_chekn(int new_n)
 
 char	*ft_itoa(int new_n)
 {
-	size_t			lennumber;
+	size_t			len_number;
 	unsigned char	*numberc;
 
-	lennumber = ft_chekn(new_n);
+	len_number = ft_chekn(new_n);
 	if (new_n < 0)
-		lennumber += 1;
-	numberc = malloc(lennumber + 1);
+		len_number += 1;
+	numberc = malloc(len_number + 1);
 	if (!numberc)
 		return (NULL);
-	numberc[lennumber] = '\0';
+	numberc[len_number] = '\0';
 	if (new_n == 0)
 	{
 		numberc[0] = '0';
 		return ((char *)numberc);
 	}
-	numberc = ft_conversion(numberc, lennumber, new_n);
+	numberc = ft_conversion(numberc, len_number, new_n);
 	return ((char *)numberc);
 }
